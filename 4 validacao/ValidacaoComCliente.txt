@@ -1,0 +1,22 @@
+## Parte 4 – Estratégia de Validação com o Cliente
+
+Imagine que você precisa validar os dados do mês de **Fevereiro de 2025** com o cliente.
+
+### Monte um roteiro descritivo:
+
+1. Quais seriam os **principais pontos que você validaria com o cliente?**
+
+Validaria  sobre os pedidos do que foi entregue e se ficou algum pendente.
+
+2. Quais técnicas utilizaria para garantir a **exatidão e a precisão** dos dados?
+
+consulta na tabela de pedido_compra
+
+3. Quais **consultas você deixaria prontas** para usar na reunião de validação?
+
+SELECT 
+    produto_id, descricao_produto, qtde_pedida, qtde_entregue, qtde_pendente as nao_recebidos
+FROM 
+    public.pedido_compra
+WHERE 
+    qtde_pendente > 0;
